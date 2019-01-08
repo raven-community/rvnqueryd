@@ -9,7 +9,7 @@
     "test": "mocha"
   },
   "dependencies": {
-    "rvndb-code": "^1.0.0",
+    "rvndb-code": "github:raven-community/rvndb-code#master",
     "dotenv": "^6.0.0",
     "mongodb": "^3.1.4",
     "bigjq": "0.0.7",

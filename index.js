@@ -1,6 +1,6 @@
 require('dotenv').config()
 const jq = require('bigjq')
-const rvndb-code = require('rvndb-code')
+const rvndb_code = require('rvndb-code')
 const MongoClient = require('mongodb').MongoClient
 const traverse = require('traverse')
 const dbTypes = ["u", "c"]
@@ -44,9 +44,9 @@ var read = async function(r) {
     let encoding = r.e  // legacy for v2 (deprecated with v3)
     let resfilter = r.r
     if (query.find) {
-      query.find = rvndb-code.encode(query.find, encoding)
+      query.find = rvndb_code.encode(query.find, encoding)
     } else if (query.aggregate) {
-      query.aggregate = rvndb-code.encode(query.aggregate, encoding)
+      query.aggregate = rvndb_code.encode(query.aggregate, encoding)
     }
     let promises = []
     let src = (query.db && query.db.length > 0) ? query.db : dbTypes
@@ -135,7 +135,7 @@ var lookup = function(r, key, resfilter) {
           reject(err)
         } else {
           let res = docs;
-          res = rvndb-code.decode(docs, r.encoding)
+          res = rvndb_code.decode(docs, r.encoding)
           
           // response filter
           if (resfilter && resfilter.f && res.length > 0) {
@@ -163,7 +163,7 @@ var lookup = function(r, key, resfilter) {
         try {
           let items = await collection.distinct(query.distinct.field, query.distinct.query, query.distinct.options)
           let res = items
-          res = rvndb-code.decode(docs, r.encoding)
+          res = rvndb_code.decode(docs, r.encoding)
           resolve({
             name: key,
             items: res

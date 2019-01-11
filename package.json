@@ -1,18 +1,22 @@
 {
   "name": "rvnqueryd",
-  "version": "0.1.7",
+  "version": "1.0.0",
   "description": "A Turing Complete Query Engine for Ravencoin",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raven-community/rvnqueryd.git"
+  },
   "author": "",
   "license": "MIT",
   "scripts": {
     "test": "mocha"
   },
   "dependencies": {
-    "rvndb-code": "github:raven-community/rvndb-code#master",
+    "rvndb-code": "^1.0.0",
     "dotenv": "^6.0.0",
     "mongodb": "^3.1.4",
-    "bigjq": "github:raven-community/bigjq#master",
+    "bigjq": "github:raven-community/bigjq/tree/1.0.0",
     "traverse": "^0.6.6"
   },
   "devDependencies": {
